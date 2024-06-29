@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.testspringboot3.springboot_test.core.DateUtils;
+import org.testspringboot3.springboot_test.core.internal.InternUtils;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -16,6 +17,7 @@ public class AccountService {
 
     public void add(long amount) {
         LOGGER.info("Adding {} to account at {}", amount, DateUtils.getDate());
+        LOGGER.info("Name {}, {}", InternUtils.getName(), new InternUtils());
         counter.addAndGet(amount);
     }
 
