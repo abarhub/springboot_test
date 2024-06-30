@@ -6,9 +6,9 @@ info:
     - get account balance given account number
     - deposit amount to a account
   version: 1.0-SNAPSHOT
-servers:
-  - url: https://testenvironment.org/api/v1
-  - url: https://prodenvironment.org/api/v1
+#servers:
+#  - url: https://testenvironment.org/api/v1
+#  - url: https://prodenvironment.org/api/v1
 tags:
   - name: accounts
     description: Operations between bank accounts
