@@ -57,6 +57,26 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AccountNotFoundError'
+  /account2:
+    get:
+      tags:
+        - accounts
+      summary: Get account information
+      description: Get account information using account number
+      operationId: getAccount2
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        404:
+          description: Account not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountNotFoundError'
 
 components:
   schemas:

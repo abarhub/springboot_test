@@ -183,6 +183,9 @@
                                 <apiPackage>org.testspringboot3.springboot_test.api</apiPackage>
                                 <modelPackage>org.testspringboot3.springboot_test.model</modelPackage>
                                 <useSpringBoot3>true</useSpringBoot3>
+<!--                                <apisToGenerate>'paths./account2'</apisToGenerate>-->
+                                <apisToGenerate>getAccount2</apisToGenerate>
+                                <ignoreFileOverride>${project.basedir}/webapp/.openapi-generator-ignore</ignoreFileOverride>
                             </configOptions>
                             <typeMappings>
                                 <typeMapping>OffsetDateTime=LocalDateTime</typeMapping>
