@@ -1,5 +1,10 @@
 spring.application.name: springboot_test
 
 
-spring.docker.compose.enabled: false
+#spring.docker.compose.enabled: false
+  
+  
+spring.kafka.bootstrap-servers: localhost:29092
+spring.kafka.consumer.group-id: my-group-id
+
 
