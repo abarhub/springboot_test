@@ -121,6 +121,12 @@
             <scope>runtime</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.testspringboot3</groupId>
+            <artifactId>apiserver</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!--        <dependency>-->
 <!--            <groupId>org.springframework.experimental</groupId>-->
 <!--            <artifactId>spring-modulith-api</artifactId>-->
@@ -147,56 +153,56 @@
                     </excludes>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.openapitools</groupId>
-                <artifactId>openapi-generator-maven-plugin</artifactId>
-<!--                <version>6.2.1</version>-->
-                <version>7.6.0</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <skipValidateSpec>true</skipValidateSpec>
-                            <inputSpec>${project.basedir}/src/main/resources/account_api_description.yml</inputSpec>
-                            <generatorName>spring</generatorName>
-                            <strictSpec>true</strictSpec>
-                            <generateApiTests>false</generateApiTests>
-                            <generateModelTests>false</generateModelTests>
-                            <configOptions>
-                                <openApiNullable>false</openApiNullable>
-                                <interfaceOnly>true</interfaceOnly>
-                                <controllerThrowsExceptions>java.io.IOException,com.example.NotFoundException</controllerThrowsExceptions>
-<!--                                <library>spring-mvc</library>-->
-                                <interfaceOnly>true</interfaceOnly>
-                                <skipDefaultInterface>true</skipDefaultInterface>
-                                <useBeanValidation>true</useBeanValidation>
-                                <useClassLevelBeanValidation>false</useClassLevelBeanValidation>
-                                <useTags>true</useTags>
-                                <java8>true</java8>
-                                <useOptional>false</useOptional>
-                                <hideGenerationTimestamp>true</hideGenerationTimestamp>
-                                <dateLibrary>java8</dateLibrary>
-                                <bigDecimalAsString>true</bigDecimalAsString>
-                                <useBeanValidation>true</useBeanValidation>
-                                <apiPackage>org.testspringboot3.springboot_test.api</apiPackage>
-                                <modelPackage>org.testspringboot3.springboot_test.model</modelPackage>
-                                <useSpringBoot3>true</useSpringBoot3>
-<!--                                <apisToGenerate>'paths./account2'</apisToGenerate>-->
-                                <apisToGenerate>getAccount2</apisToGenerate>
-                                <ignoreFileOverride>${project.basedir}/webapp/.openapi-generator-ignore</ignoreFileOverride>
-                            </configOptions>
-                            <typeMappings>
-                                <typeMapping>OffsetDateTime=LocalDateTime</typeMapping>
-                            </typeMappings>
-                            <importMappings>
-                                <importMapping>java.time.OffsetDateTime=java.time.LocalDateTime</importMapping>
-                            </importMappings>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.openapitools</groupId>-->
+<!--                <artifactId>openapi-generator-maven-plugin</artifactId>-->
+<!--&lt;!&ndash;                <version>6.2.1</version>&ndash;&gt;-->
+<!--                <version>7.6.0</version>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>generate</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <skipValidateSpec>true</skipValidateSpec>-->
+<!--                            <inputSpec>${project.basedir}/src/main/resources/account_api_description.yml</inputSpec>-->
+<!--                            <generatorName>spring</generatorName>-->
+<!--                            <strictSpec>true</strictSpec>-->
+<!--                            <generateApiTests>false</generateApiTests>-->
+<!--                            <generateModelTests>false</generateModelTests>-->
+<!--                            <configOptions>-->
+<!--                                <openApiNullable>false</openApiNullable>-->
+<!--                                <interfaceOnly>true</interfaceOnly>-->
+<!--                                <controllerThrowsExceptions>java.io.IOException,com.example.NotFoundException</controllerThrowsExceptions>-->
+<!--&lt;!&ndash;                                <library>spring-mvc</library>&ndash;&gt;-->
+<!--                                <interfaceOnly>true</interfaceOnly>-->
+<!--                                <skipDefaultInterface>true</skipDefaultInterface>-->
+<!--                                <useBeanValidation>true</useBeanValidation>-->
+<!--                                <useClassLevelBeanValidation>false</useClassLevelBeanValidation>-->
+<!--                                <useTags>true</useTags>-->
+<!--                                <java8>true</java8>-->
+<!--                                <useOptional>false</useOptional>-->
+<!--                                <hideGenerationTimestamp>true</hideGenerationTimestamp>-->
+<!--                                <dateLibrary>java8</dateLibrary>-->
+<!--                                <bigDecimalAsString>true</bigDecimalAsString>-->
+<!--                                <useBeanValidation>true</useBeanValidation>-->
+<!--                                <apiPackage>org.testspringboot3.springboot_test.api</apiPackage>-->
+<!--                                <modelPackage>org.testspringboot3.springboot_test.model</modelPackage>-->
+<!--                                <useSpringBoot3>true</useSpringBoot3>-->
+<!--&lt;!&ndash;                                <apisToGenerate>'paths./account2'</apisToGenerate>&ndash;&gt;-->
+<!--                                <apisToGenerate>getAccount2</apisToGenerate>-->
+<!--                                <ignoreFileOverride>${project.basedir}/webapp/.openapi-generator-ignore</ignoreFileOverride>-->
+<!--                            </configOptions>-->
+<!--                            <typeMappings>-->
+<!--                                <typeMapping>OffsetDateTime=LocalDateTime</typeMapping>-->
+<!--                            </typeMappings>-->
+<!--                            <importMappings>-->
+<!--                                <importMapping>java.time.OffsetDateTime=java.time.LocalDateTime</importMapping>-->
+<!--                            </importMappings>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 

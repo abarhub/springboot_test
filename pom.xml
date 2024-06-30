@@ -35,6 +35,8 @@
         <module>core</module>
         <module>webapp</module>
         <module>batch</module>
+        <module>apiserver</module>
+        <module>apiclient</module>
     </modules>
 
 </project>
