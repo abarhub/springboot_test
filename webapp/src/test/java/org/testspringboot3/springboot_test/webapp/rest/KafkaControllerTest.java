@@ -33,4 +33,29 @@ class KafkaControllerTest {
 
         LOGGER.info("res post={}", res);
     }
+
+
+    @Test
+    void sendMessageMultiple() {
+
+        int nb=100;
+        String debutMessage="message";
+
+        RestClient restClient = RestClient.builder()
+                .requestFactory(new HttpComponentsClientHttpRequestFactory())
+                .baseUrl("http://localhost:8080")
+                .build();
+
+        for(int i=0;i<nb;i++) {
+            var message=debutMessage+(i+1);
+            var res = restClient.post()
+                    //.uri("http://localhost:8080/send?message=abc")
+                    .uri("/send?message={message}",message)
+                    .contentType(APPLICATION_JSON)
+                    .retrieve()
+                    .body(String.class);
+
+            LOGGER.info("res {} post={}", i, res);
+        }
+    }
 }
