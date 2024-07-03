@@ -16,7 +16,8 @@ public class AccountService {
 
     public void add(long amount) {
         LOGGER.info("Adding {} to account at {}", amount, DateUtils.getDate());
-        LOGGER.info("Name {}, {}", InternUtils.getName(), new InternUtils());
+        LOGGER.info("Name {}, {}",
+                InternUtils.getName(),     new InternUtils());
         counter.addAndGet(amount);
     }
 
