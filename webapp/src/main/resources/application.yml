@@ -6,5 +6,8 @@ spring.application.name: springboot_test
   
 spring.kafka.bootstrap-servers: localhost:29092
 spring.kafka.consumer.group-id: my-group-id
-
+#spring:
+#  kafka:
+#    consumer:
+#      enable-auto-commit: false
 
