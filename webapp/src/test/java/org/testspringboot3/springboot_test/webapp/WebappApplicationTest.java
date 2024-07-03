@@ -1,11 +1,11 @@
 package org.testspringboot3.springboot_test.webapp;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.modulith.core.ApplicationModules;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 class WebappApplicationTest {
@@ -21,5 +21,4 @@ class WebappApplicationTest {
         ApplicationModules modules = ApplicationModules.of(WebappApplication.class);
         modules.verify();
     }
-
 }

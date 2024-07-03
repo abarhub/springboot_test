@@ -12,5 +12,4 @@ public class BatchApplication {
                 .web(WebApplicationType.NONE)
                 .run(args);
     }
-
 }

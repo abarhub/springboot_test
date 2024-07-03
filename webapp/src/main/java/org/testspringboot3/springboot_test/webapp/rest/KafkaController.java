@@ -1,11 +1,10 @@
 package org.testspringboot3.springboot_test.webapp.rest;
 
+import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.testspringboot3.springboot_test.webapp.service.MessageProducer;
-
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class KafkaController {
@@ -24,9 +23,8 @@ public class KafkaController {
             return "Invalid message";
         }
         var id = counter.accumulateAndGet(1, (x, y) -> (x + y) % 3);
-        var key="key" + id;
+        var key = "key" + id;
         messageProducer.sendMessage("my-topic", key, message);
-        return "Message sent ("+key+"): " + message;
+        return "Message sent (" + key + "): " + message;
     }
-
 }

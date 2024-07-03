@@ -9,7 +9,7 @@ import org.testspringboot3.springboot_test.batch.service.ClientService;
 @Service
 public class AppRunner implements CommandLineRunner {
 
-    private static final Logger LOGGER= LoggerFactory.getLogger(AppRunner.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppRunner.class);
 
     private final ClientService clientService;
 

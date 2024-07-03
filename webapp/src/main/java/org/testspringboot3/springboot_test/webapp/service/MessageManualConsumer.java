@@ -1,6 +1,9 @@
 package org.testspringboot3.springboot_test.webapp.service;
 
 import jakarta.annotation.PostConstruct;
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.Properties;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -8,10 +11,6 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
-import java.time.Duration;
-import java.util.Arrays;
-import java.util.Properties;
 
 @Service
 public class MessageManualConsumer {
@@ -23,11 +22,11 @@ public class MessageManualConsumer {
         Thread thread = new Thread(() -> {
             try {
                 consume();
-            }catch (Exception e) {
+            } catch (Exception e) {
                 LOGGER.error(e.getMessage(), e);
             }
         });
-//        thread.start();
+        //        thread.start();
     }
 
     public void consume() throws InterruptedException {
@@ -35,10 +34,10 @@ public class MessageManualConsumer {
         props.put("bootstrap.servers", "localhost:29092");
         props.put("group.id", "test-group-manual");
         props.put("enable.auto.commit", "false");
-        props.put("auto.offset.reset", "earliest");  // Important pour toujours commencer au début
+        props.put("auto.offset.reset", "earliest"); // Important pour toujours commencer au début
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
-//        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+        //        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
         props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, 1);
         props.put(ConsumerConfig.CLIENT_ID_CONFIG, "my-client-id3");
 
@@ -47,7 +46,7 @@ public class MessageManualConsumer {
 
         LOGGER.info("Subscribed to topic: my-topic");
 
-        while (true) {  // Boucle infinie
+        while (true) { // Boucle infinie
             ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
             for (ConsumerRecord<String, String> record : records) {
                 LOGGER.info("offset = {}, key = {}, value = {}", record.offset(), record.key(), record.value());
@@ -59,7 +58,7 @@ public class MessageManualConsumer {
 
                 // Optionnel : ajoutez un délai pour éviter une boucle trop rapide
                 try {
-                    Thread.sleep(1000);  // Pause d'une seconde
+                    Thread.sleep(1000); // Pause d'une seconde
                 } catch (InterruptedException e) {
                     LOGGER.error(e.getMessage(), e);
                     throw e;
@@ -67,7 +66,6 @@ public class MessageManualConsumer {
             }
         }
 
-//        LOGGER.info("Subscribed to topic: my-topic END");
+        //        LOGGER.info("Subscribed to topic: my-topic END");
     }
-
 }

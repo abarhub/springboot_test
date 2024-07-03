@@ -1,13 +1,12 @@
 package org.testspringboot3.springboot_test.webapp.rest;
 
+import java.math.BigDecimal;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.testspringboot3.springboot_test.api.AccountsApi;
 import org.testspringboot3.springboot_test.model.Account;
 import org.testspringboot3.springboot_test.model.DepositRequest;
 import org.testspringboot3.springboot_test.webapp.service.AccountService;
-
-import java.math.BigDecimal;
 
 @RestController
 public class AccountController implements AccountsApi {

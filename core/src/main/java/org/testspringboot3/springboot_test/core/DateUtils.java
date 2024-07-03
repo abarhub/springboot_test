@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class DateUtils {
 
-    public static LocalDateTime getDate(){
+    public static LocalDateTime getDate() {
         return LocalDateTime.now();
     }
 }

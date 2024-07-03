@@ -1,6 +1,5 @@
 package org.testspringboot3.springboot_test.webapp.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +16,7 @@ public class MessageProducer {
         kafkaTemplate.send(topic, message);
     }
 
-    public void sendMessage(String topic,String cle,String message) {
-        kafkaTemplate.send(topic,cle, message);
+    public void sendMessage(String topic, String cle, String message) {
+        kafkaTemplate.send(topic, cle, message);
     }
-
 }
