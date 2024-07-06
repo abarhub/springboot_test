@@ -7,6 +7,11 @@ public class StyleTest {
         var x = 10;
         System.out.println(x);
 
-        var foo = new StringBuilder().append(10).append("aaaa").append("xdfdfdfggf").append(9542).toString();
+        var foo = new StringBuilder()
+                .append(10)
+                .append("aaaa")
+                .append("xdfdfdfggf")
+                .append(9542)
+                .toString();
     }
 }
