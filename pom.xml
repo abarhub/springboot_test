@@ -90,9 +90,9 @@
 <!--                        </googleJavaFormat>-->
 
                         <palantirJavaFormat>
-                            <version>2.39.0</version>                     <!-- optional -->
+                            <version>2.47.0</version>                     <!-- optional -->
                             <style>PALANTIR</style>                       <!-- or AOSP/GOOGLE (optional) -->
-                            <formatJavadoc>false</formatJavadoc>          <!-- defaults to false (optional, requires at least Palantir 2.39.0) -->
+<!--                            <formatJavadoc>false</formatJavadoc>          &lt;!&ndash; defaults to false (optional, requires at least Palantir 2.39.0) &ndash;&gt;-->
                         </palantirJavaFormat>
 
                         <!-- make sure every file has the following copyright header.
