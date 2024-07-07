@@ -35,12 +35,20 @@ class DateUtilsTest {
     void test3() {
         LOGGER.info("test3");
         MDC.put("cle2", "valeur2");
-        LOGGER.atInfo().addKeyValue("test","test3").log("suite3");
+        LOGGER.atInfo().addKeyValue("test", "test3").log("suite3");
         try {
             int i = 1 / 0;
             LOGGER.info("i={}", i);
         } catch (Exception e) {
             LOGGER.error("erreur pour diviser par 0", e);
         }
+    }
+
+    @Test
+    void test4() {
+        LOGGER.info("test4");
+        ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsExceptionTestTestTestetressimple = null;
+        MaClasse<ArrayIndexOutOfBoundsException> maClasse =
+                new MaClasse<>(arrayIndexOutOfBoundsExceptionTestTestTestetressimple);
     }
 }
