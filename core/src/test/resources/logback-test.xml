@@ -1,0 +1,52 @@
+<configuration>
+
+    <property name="LOG_REP" value="./target/logs/"/>
+    <property name="LOG_FILE" value="./target/logs/app.log"/>
+    <property name="LOG_FILE2" value="./target/logs/app2.json"/>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+<!--    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />-->
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+<!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} -%kvp- %msg%n</pattern>-->
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>${CONSOLE_LOG_CHARSET}</charset>
+        </encoder>
+    </appender>
+
+    <appender name="json" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.contrib.json.classic.JsonLayout">
+            <jsonFormatter
+                    class="ch.qos.logback.contrib.jackson.JacksonJsonFormatter">
+                <prettyPrint>true</prettyPrint>
+            </jsonFormatter>
+            <timestampFormat>yyyy-MM-dd' 'HH:mm:ss.SSS</timestampFormat>
+        </layout>
+    </appender>
+
+    <!-- ch.qos.logback.core.rolling.RollingFileAppender -->
+    <appender name="jsonEncoder" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.JsonEncoder"/>
+        <file>${LOG_FILE2}</file>
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz}</fileNamePattern>-->
+<!--            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-false}</cleanHistoryOnStart>-->
+<!--            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-10MB}</maxFileSize>-->
+<!--            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-0}</totalSizeCap>-->
+<!--            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-7}</maxHistory>-->
+<!--        </rollingPolicy>-->
+    </appender>
+
+    <logger name="org.springframework.web" level="DEBUG"/>
+
+    <root level="debug">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="json" />
+<!--        <appender-ref ref="jsonEncoder" />-->
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
