@@ -1,0 +1,15 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: com.example.AddXImplementToMultipleSchemas
+displayName: Add x-implement to multiple schemas
+recipeList:
+  - org.openrewrite.yaml.ChangePropertyValue:
+      propertyKey: components.schemas.DepositRequest.x-implement
+      newValue: true
+#      filePattern: src/main/resources/account_api_description.yml
+#      filePattern:  '*.yml'
+#  - org.openrewrite.yaml.ChangePropertyValue:
+#      propertyKey: components.schemas.Product.x-implement
+#      newValue: true
+#  - org.openrewrite.yaml.ChangePropertyValue:
+#      propertyKey: components.schemas.Order.x-implement
+#      newValue: true

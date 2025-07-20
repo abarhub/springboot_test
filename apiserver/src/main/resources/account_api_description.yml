@@ -82,6 +82,7 @@ components:
   schemas:
     Account:
       type: object
+      x-implements: org.exemple.MonInterface
       properties:
         balance:
           type: number
