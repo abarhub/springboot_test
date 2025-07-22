@@ -29,17 +29,20 @@
     <build>
         <plugins>
 
-<!--            <plugin>-->
-<!--                <groupId>org.openrewrite.maven</groupId>-->
-<!--                <artifactId>rewrite-maven-plugin</artifactId>-->
-<!--                <version>6.13.0</version>-->
-<!--                <configuration>-->
-<!--                    <activeRecipes>-->
-<!--                        <recipe>org.openrewrite.java.OrderImports</recipe>-->
-<!--                        <recipe>com.example.AddXImplementToMultipleSchemas</recipe>-->
-<!--                    </activeRecipes>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <plugin>
+                <groupId>org.openrewrite.maven</groupId>
+                <artifactId>rewrite-maven-plugin</artifactId>
+                <version>6.13.0</version>
+                <configuration>
+                    <activeRecipes>
+                        <recipe>org.openrewrite.java.OrderImports</recipe>
+                        <recipe>com.example.AddXImplementToMultipleSchemas</recipe>
+                    </activeRecipes>
+                    <configLocation>
+                        rewrite.yml
+                    </configLocation>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.openapitools</groupId>
